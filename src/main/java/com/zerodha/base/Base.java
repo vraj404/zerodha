@@ -7,9 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
-
-import static com.zerodha.util.util.clicker;
 
 public class Base {
     public static WebDriver driver;
@@ -36,5 +35,9 @@ public class Base {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.get(prop.getProperty("url"));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+    }
+    public static String getOfferName(){
+        return prop.getProperty("IPO");
     }
 }

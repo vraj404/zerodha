@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org">
+<suite name="MySuite" verbose="1">
+    <test name="HomeTest">
+        <classes>
+            <class name="tests.HomeTest"/>
+        </classes>
+    </test>
+    <test name="BidsTest">
+        <classes>
+            <class name="tests.BidsTest"/>
+        </classes>
+    </test>
+</suite>

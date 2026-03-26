@@ -5,13 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.sql.SQLOutput;
-
-import static com.zerodha.util.util.clicker;
 
 public class Home extends Base {
     @FindBy(xpath = "//button[contains(text(),\"I understand\")]")
-    WebElement understandBtn;
+    public WebElement understandBtn;
+
+    @FindBy(xpath="//a[span[contains(text(),\"Bids\")]]")
+    public WebElement bidsTab;
+
+    @FindBy(xpath = "//button[contains(text(),\"Close\")]")
+    public WebElement popUpClose;
 
     public Home(){
         PageFactory.initElements(driver,this);
