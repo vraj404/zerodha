@@ -15,6 +15,9 @@ public class Bids extends Base {
     @FindBy(xpath = "//input[@placeholder=\"Search\"]")
     public WebElement searchBox;
 
+    @FindBy(xpath = "//td[div[@class=\"symbol-wrap\"]]")
+    public WebElement symbol;
+
     public Bids(){
         PageFactory.initElements(driver,this);
     }

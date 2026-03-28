@@ -34,7 +34,7 @@ public class util {
     }
 
     public void sender(WebElement element ,String s){
-        waiter(driver,element,5);
+        waiter(driver,2);
         element.sendKeys(s);
     }
 }

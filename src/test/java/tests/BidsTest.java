@@ -4,7 +4,6 @@ import com.zerodha.base.Base;
 import com.zerodha.pages.Bids;
 import com.zerodha.pages.Home;
 import com.zerodha.util.util;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -37,7 +36,9 @@ public class BidsTest extends Base {
     public void t4(){
         String  s = prop.getProperty("ipo");
         u.sender(b.searchBox,s);
-       ee = driver.findElement(By.xpath("//td[@class=\"col-symbol\"]/div[1]")).getText();
+        u.clicker(b.apply);
+        String t = b.symbol.getText();
+        Assert.assertTrue(t.contains(s));
     }
 
     @AfterClass
