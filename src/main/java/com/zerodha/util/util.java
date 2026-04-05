@@ -56,4 +56,8 @@ public class util {
         waiter(driver,2);
         element.sendKeys(s);
     }
+
+    public boolean isElementShown(WebElement element){
+        return element.isDisplayed();
+    }
 }

@@ -66,6 +66,28 @@ public class OrderForm extends Base {
     @FindBy(xpath = "//span[contains(text(),\"Submit\")]")
     public WebElement submit;
 
+    @FindBy(css = ".text-green")
+    public WebElement amount;
+
+    @FindBy(xpath = "//a[contains(@class,\"text-small\")]")
+    public WebElement addBids;
+
+    @FindBy(xpath = "//a[contains(@class,\"ipo-bid-delete\")]")
+    public WebElement deleteBids;
+
+    public boolean bidChecker( int i, int j){
+        int count = Integer.parseInt(prop.getProperty("bidCount"));
+        u = new util();
+        while(i<count){
+            u.clicker(addBids);
+            i++;
+        }
+        while(j<count){
+            u.clicker(deleteBids);
+            j++;
+        }
+        return (i == j);
+    }
     public OrderForm(){
         PageFactory.initElements(driver,this);
         elements.add(upiID);
